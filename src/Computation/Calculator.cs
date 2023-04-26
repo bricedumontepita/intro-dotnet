@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 
 namespace Computation
 {
@@ -6,12 +6,9 @@ namespace Computation
     {
         public int SumNumbers(int start, int count)
         {
-            // TODO #1: Get all tests passing
-
-            // TODO #2: Refactor so there are no loopss or if statements
-
-            // TODO #3: Refactor to use the Aggregate() LINQ method
-            throw new NotImplementedException();
+            // return Enumerable.Range(start, count).Sum();
+            // Enumerable.Range(start, count).Aggregate(0, (res, elt) => res + elt)
+            return Enumerable.Aggregate(Enumerable.Range(start, count), 0, (result, elt) => result + elt);
         }
     }
 }
